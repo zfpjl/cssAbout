@@ -7,12 +7,14 @@
         .box {
             width: 300px;
             height: 300px;
-            border-radius: 5px;
+            border-radius: 50%;
+            border:1px solid black;
             box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
             background: #fbfcee;
             position: relative;
             overflow: hidden;
             margin:0 auto;
+            transform:rotate(0deg); /*偶尔会有浏览器（如chrome56会有border-radius和over-flow的bug，导致不能显示圆角，在父级同样加上transform属性就可以了）*/
         }
         .wave {
             opacity: .6;
@@ -29,7 +31,6 @@
             border-radius: 40%;
             animation: drift 3000ms infinite linear;
         }
-
         .wave.-three {
             opacity: .3;
             background: pink;
@@ -51,17 +52,15 @@
         }
 
     </style>
-
-
-
-
-
 </head>
 <body>
 <div class='box'>
-    <div class='wave -one'>1</div>
-    <div class='wave -two'>2</div>
-    <div class='wave -three'>3</div>
+    <div class="middle">
+        <div class='wave -one'>1</div>
+        <div class='wave -two'>2</div>
+        <div class='wave -three'>3</div>
+    </div>
+
 </div>
 </body>
 </html>
